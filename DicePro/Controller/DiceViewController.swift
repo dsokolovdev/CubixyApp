@@ -149,7 +149,9 @@ class DiceViewController: UIViewController {
         setupDiceStack()
         setupProgressBar()
         setupLabelMessage()
+        
         updateDiceLayout()
+        updateResetButtonState()
         
         scoresView.update(players: model.data.players, layout: currentLayout)
         
