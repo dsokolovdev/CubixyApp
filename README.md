@@ -21,10 +21,10 @@ DicePro solves a simple but common problem:
 providing a clean, intuitive, and fast way to roll one or two dice during board games or casual play.
 
 The app focuses on:
-	•	eliminating physical dice when not available,
-	•	providing clear score tracking for up to four players,
-	•	offering a distraction-free, high-contrast UI that is easy to use during a game,
-	•	adding animations that make digital dice feel more “alive”.
+ - eliminating physical dice when not available,
+ - providing clear score tracking for up to four players,
+ - offering a distraction-free, high-contrast UI that is easy to use during a game,
+ - adding animations that make digital dice feel more “alive”.
 
 This project demonstrates practical UIKit skills, state management, adaptive layout, and clean architecture — all wrapped in a minimal, polished user experience.
 
