@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="Images/AppIcon.png" width="100">
+</p>
+
 # DicePro
 
 DicePro is a lightweight iOS dice rolling app built with UIKit and fully programmatic UI. 
