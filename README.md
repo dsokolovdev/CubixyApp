@@ -4,7 +4,7 @@
 
 # DicePro
 
-DicePro is a lightweight iOS dice rolling app built with UIKit and fully programmatic UI. 
+DicePro is a lightweight iOS dice rolling app built with UIKit and a fully programmatic UI. 
 The project demonstrates clean structure, adaptive layout, and smooth interactions.
 
 <p align="center">
@@ -34,11 +34,11 @@ This project demonstrates practical UIKit skills, state management, adaptive lay
 
 ## Features
 
-- Roll one or two dice with tap or long press.
+- Roll one or two dice with a tap or long press.
 - Long-press gesture with animated rolling and progress indicator.
 - Per-player score tracking: current roll, total score, attempts, and rank.
 - Up to four players with quick switching.
-- Two layout mode:
+- Two layout modes:
   - **Row** — focused view for the active player.
   - **Grid** — overview of all players.
 - Settings screen:
