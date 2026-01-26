@@ -803,35 +803,32 @@ extension DiceViewController {
     /// Updates the players array based on the current settings
     /// (enabling or disabling Player 3 and Player 4).
     private func updatePlayers(_ settings: Settings) {
+        let existingPlayers = model.data.players
+        
+        func player(named name: String) -> Player {
+            existingPlayers.first { $0.name == name } ?? Player(name: name)
+        }
+        
         var updatedPlayers: [Player] = []
         
         // Player 1 always exists
-        updatedPlayers.append(model.data.players[0])
+        updatedPlayers.append(player(named: "P1"))
         
         // Player 2 always exists
-        updatedPlayers.append(model.data.players[1])
+        updatedPlayers.append(player(named: "P2"))
         
         // Player 3
         if settings.isPlayer3Enabled {
-            if model.data.players.count < 3 {
-                updatedPlayers.append(Player(name: "P3"))
-            } else {
-                updatedPlayers.append(model.data.players[2])
-            }
+            updatedPlayers.append(player(named: "P3"))
         }
         
         // Player 4
         if settings.isPlayer4Enabled {
-            if model.data.players.count < 4 {
-                updatedPlayers.append(Player(name: "P4"))
-            } else {
-                updatedPlayers.append(model.data.players[3])
-            }
+            updatedPlayers.append(player(named: "P4"))
         }
         
         model.data.players = updatedPlayers
         model.data.updateRanks()
-        
         updateSegmentedControl()
     }
 }

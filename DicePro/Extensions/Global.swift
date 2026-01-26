@@ -54,13 +54,17 @@ var scaleFactor: CGFloat {
 
 // MARK: - Player Names
 /// Standardized player identifiers used in UI and model.
-enum Players: String {
+enum Players: String, CaseIterable {
     case player1 = "P1"
     case player2 = "P2"
     case player3 = "P3"
     case player4 = "P4"
     
     var name: String { rawValue }
+    
+    var index: Int {
+        Self.allCases.firstIndex(of: self)!
+    }
 }
 
 // MARK: - Layout Types
