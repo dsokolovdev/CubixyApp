@@ -98,14 +98,30 @@ class DiceViewController: UIViewController {
         .blackRed,
         .blackYellow
     ]
+    
+    ///Value of the first dice
     private var dice1Value = 1
+    
+    ///Value of the second dice
     private var dice2Value = 1
     
     /// Index for the first dice (reserved for future use, e.g. color swapping).
-    private var dice1Index = 0
+    private var dice1Index: Int {
+        get { settings.dice1ColorIndex }
+        set {
+            settings.dice1ColorIndex = newValue
+            SettingsStorage.save(settings)
+        }
+    }
     
     /// Index for the second dice (reserved for future use, e.g. color swapping).
-    private var dice2Index = 1
+    private var dice2Index: Int {
+        get { settings.dice2ColorIndex }
+        set {
+            settings.dice2ColorIndex = newValue
+            SettingsStorage.save(settings)
+        }
+    }
     
     /// Color scheme for the first dice.
     private var dice1Color: DiceModel.Dices {

@@ -24,6 +24,9 @@ struct Settings: Codable {
     /// Prevents the device screen from dimming or locking.
     var isScreenAlwaysOnEnabled: Bool
     
+    var dice1ColorIndex: Int
+    var dice2ColorIndex: Int
+    
     
     // MARK: - Default Settings
     /// The initial default configuration for all settings.
@@ -31,7 +34,9 @@ struct Settings: Codable {
         isPlayer3Enabled: false,
         isPlayer4Enabled: false,
         isTwoDicesEnabled: false,
-        isScreenAlwaysOnEnabled: false
+        isScreenAlwaysOnEnabled: false,
+        dice1ColorIndex: 0,
+        dice2ColorIndex: 1
     )
     
     
