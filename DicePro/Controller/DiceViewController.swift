@@ -93,10 +93,13 @@ class DiceViewController: UIViewController {
     private var progressView: UIProgressView!
     
     private let diceColors: [DiceModel.Dices] = [
-        .WhiteBlue,
-        .BlueGrey,
+        .whiteBlue,
+        .blueGrey,
         .blackRed,
-        .blackYellow
+        .blackYellow,
+        .greyRed,
+        .greyBlack,
+        .blackGrey
     ]
     
     ///Value of the first dice
@@ -738,7 +741,7 @@ extension DiceViewController {
             self?.dice2.image = UIImage(
                 named: self?.model.setDice(
                     score: self?.model.roll() ?? 0,
-                    color: self?.dice2Color ?? .WhiteBlue
+                    color: self?.dice2Color ?? .whiteBlue
                 ) ?? ""
             )
         }

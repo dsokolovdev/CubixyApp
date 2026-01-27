@@ -15,27 +15,41 @@ struct DiceModel  {
     // MARK: - Dice Types
     /// Available dice color themes with their mapped image sets.
     enum Dices {
-        case blackYellow, blackRed, BlueGrey, WhiteBlue
+        case blackGrey, blackRed, blackYellow, blueGrey, greyBlack, greyRed, whiteBlue
         
         /// Returns an array of dice face image names for the selected theme.
         var diceArray: [String] {
             switch self {
-            case .BlueGrey:
-                return ["DiceBlueGrey1", "DiceBlueGrey2", "DiceBlueGrey3",
-                        "DiceBlueGrey4", "DiceBlueGrey5", "DiceBlueGrey6"]
-                
-            case .WhiteBlue:
-                return ["DiceWhiteBlue1", "DiceWhiteBlue2", "DiceWhiteBlue3",
-                        "DiceWhiteBlue4", "DiceWhiteBlue5", "DiceWhiteBlue6"]
+            case .blackGrey:
+                return ["BlackGrey1", "BlackGrey2", "BlackGrey3",
+                        "BlackGrey4", "BlackGrey5", "BlackGrey6"]
                 
             case .blackRed:
-                return ["DiceBlackRed1", "DiceBlackRed2", "DiceBlackRed3",
-                        "DiceBlackRed4", "DiceBlackRed5", "DiceBlackRed6"]
+                return ["BlackRed1", "BlackRed2", "BlackRed3",
+                        "BlackRed4", "BlackRed5", "BlackRed6"]
                 
             case .blackYellow:
-                return ["DiceBlackYellow1", "DiceBlackYellow2", "DiceBlackYellow3",
-                        "DiceBlackYellow4", "DiceBlackYellow5", "DiceBlackYellow6"]
+                return ["BlackYellow1", "BlackYellow2", "BlackYellow3",
+                        "BlackYellow4", "BlackYellow5", "BlackYellow6"]
+                
+            case .blueGrey:
+                return ["BlueGrey1", "BlueGrey2", "BlueGrey3",
+                        "BlueGrey4", "BlueGrey5", "BlueGrey6"]
+                
+            case .greyBlack:
+                return ["GreyBlack1", "GreyBlack2", "GreyBlack3",
+                        "GreyBlack4", "GreyBlack5", "GreyBlack6"]
+                
+            case .greyRed:
+                return ["GreyRed1", "GreyRed2", "GreyRed3",
+                        "GreyRed4", "GreyRed5", "GreyRed6"]
+                
+            case .whiteBlue:
+                return ["WhiteBlue1", "WhiteBlue2", "WhiteBlue3",
+                        "WhiteBlue4", "WhiteBlue5", "WhiteBlue6"]
             }
+            
+            
         }
     }
     
