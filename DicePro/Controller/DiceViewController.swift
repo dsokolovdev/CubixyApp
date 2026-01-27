@@ -96,8 +96,8 @@ class DiceViewController: UIViewController {
         .whiteBlue,
         .blueGrey,
         .blackRed,
-        .blackYellow,
         .greyRed,
+        .blackYellow,
         .greyBlack,
         .blackGrey
     ]

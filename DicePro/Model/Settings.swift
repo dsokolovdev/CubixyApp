@@ -62,7 +62,7 @@ struct Settings: Codable {
             DicePro
             Version: \(version) (\(build))
             Made with ❤️  by D.S.
-            © 2025
+            © 2026
             """
     }
 }
