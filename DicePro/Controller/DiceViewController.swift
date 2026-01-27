@@ -74,12 +74,6 @@ class DiceViewController: UIViewController {
     /// Dice2 height constraint.
     private var dice2HeightConstraint: NSLayoutConstraint!
     
-    /// Color scheme for the first dice.
-    private let dice1Color = DiceModel.Dices.WhiteBlue
-    
-    /// Color scheme for the second dice.
-    private let dice2Color = DiceModel.Dices.BlueGrey
-    
     /// Main roll button.
     private var rollButton: UIButton!
     
@@ -98,11 +92,30 @@ class DiceViewController: UIViewController {
     /// Progress bar that indicates long-press duration.
     private var progressView: UIProgressView!
     
+    private let diceColors: [DiceModel.Dices] = [
+        .WhiteBlue,
+        .BlueGrey,
+        .blackRed,
+        .blackYellow
+    ]
+    private var dice1Value = 1
+    private var dice2Value = 1
+    
     /// Index for the first dice (reserved for future use, e.g. color swapping).
     private var dice1Index = 0
     
     /// Index for the second dice (reserved for future use, e.g. color swapping).
     private var dice2Index = 1
+    
+    /// Color scheme for the first dice.
+    private var dice1Color: DiceModel.Dices {
+        diceColors[dice1Index]
+    }
+    
+    /// Color scheme for the second dice.
+    private var dice2Color: DiceModel.Dices {
+        diceColors[dice2Index]
+    }
     
     // MARK: - Timers & Long Press State
     
@@ -590,6 +603,9 @@ extension DiceViewController {
             string = "+ \(sum)"
         }
         
+        dice1Value = roll1
+        dice2Value = roll2
+        
         updateCurrentPlayer(sum: sum)
         popUpMessage(text: string)
         
@@ -745,6 +761,9 @@ extension DiceViewController {
         let sum = (settings.isTwoDicesEnabled ? r1 + r2 + 2 : r1 + 1)
         popUpMessage(text: "+\(sum)")
         
+        dice1Value = r1
+        dice2Value = r2
+        
         // Update player scores and UI
         updateCurrentPlayer(sum: sum)
     }
@@ -837,25 +856,51 @@ extension DiceViewController {
 
 extension DiceViewController {
     
-    /// Adds left and right swipe gestures to the first dice.
     func addSwipeGesturesToDice() {
-        let left = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
-        left.direction = .left
+        addSwipeGestures(to: dice1)
+        addSwipeGestures(to: dice2)
+    }
+
+    /// Adds left and right swipe gestures to the first dice.
+    func addSwipeGestures(to view: UIView) {
+        let up = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
+        up.direction = .up
         
-        let right = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
-        right.direction = .right
+        let down = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
+        down.direction = .down
         
-        dice1.isUserInteractionEnabled = true
-        dice1.addGestureRecognizer(left)
-        dice1.addGestureRecognizer(right)
+        view.isUserInteractionEnabled = true
+        view.addGestureRecognizer(up)
+        view.addGestureRecognizer(down)
     }
     
     /// Handles swipe gestures on the first dice (reserved for future behavior).
     @objc func handleSwipe(_ gesture: UISwipeGestureRecognizer) {
-        if gesture.direction == .left {
-            // Future behavior for left swipe.
-        } else {
-            // Future behavior for right swipe.
+        guard let view = gesture.view else { return }
+
+        let forward = (gesture.direction == .up)
+
+        if view === dice1 {
+            changeColorForDice1(forward: forward)
+        } else if view === dice2 {
+            changeColorForDice2(forward: forward)
+        }
+    }
+    
+    private func changeColorForDice1(forward: Bool) {
+        let count = diceColors.count
+        dice1Index = forward ? (dice1Index + 1) % count : (dice1Index - 1 + count) % count
+        UIView.transition( with: dice1, duration: 0.2, options: .transitionCrossDissolve) {
+            self.dice1.image = UIImage(named: self.model.setDice(score: self.dice1Value, color: self.dice1Color))
+        }
+        
+    }
+
+    private func changeColorForDice2(forward: Bool) {
+        let count = diceColors.count
+        dice2Index = forward ? (dice2Index + 1) % count : (dice2Index - 1 + count) % count
+        UIView.transition( with: dice2, duration: 0.2, options: .transitionCrossDissolve) {
+            self.dice2.image = UIImage(named: self.model.setDice(score: self.dice2Value, color: self.dice2Color))
         }
     }
 }
