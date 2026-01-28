@@ -83,3 +83,10 @@ enum LayoutType: String {
         }
     }
 }
+
+struct Application {
+    static let appName: String = "Cubixy"
+    private static let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "—"
+    private static let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "—"
+    static var appVersion: String {"\(version) (\(build))"}
+}

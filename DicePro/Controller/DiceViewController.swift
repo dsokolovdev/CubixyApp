@@ -193,7 +193,7 @@ class DiceViewController: UIViewController {
             // Fallback for earlier iOS versions (no view-based initializer available).
         }
         
-        title = "Cubixy"
+        title = Application.appName
         view.backgroundColor = .systemBackground
         view.preservesSuperviewLayoutMargins = true
         

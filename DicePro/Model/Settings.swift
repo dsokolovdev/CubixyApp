@@ -55,12 +55,9 @@ struct Settings: Codable {
     // MARK: - Footer Text
     /// Returns formatted version/build info for displaying at the bottom of Settings screen.
     static var settingsFooterText: String {
-        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "—"
-        let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "—"
-        
         return """
-            DicePro
-            Version: \(version) (\(build))
+            \(Application.appName)
+            Version: \(Application.appVersion)
             Made with ❤️  by D.S.
             © 2026
             """
