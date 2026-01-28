@@ -2,9 +2,9 @@
   <img src="Images/Preview.png" width="800">
 </p>
 
-# DicePro
+# Cubixy
 
-DicePro is a lightweight iOS dice rolling app built with UIKit and a fully programmatic UI. 
+Cubixy is a lightweight iOS dice rolling app built with UIKit and a fully programmatic UI. 
 The project demonstrates clean structure, adaptive layout, and smooth interactions.
 
 <p align="center">
@@ -21,7 +21,7 @@ The project demonstrates clean structure, adaptive layout, and smooth interactio
 
 ## Purpose
 
-DicePro solves a simple but common problem:
+Cubixy solves a simple but common problem:
 providing a clean, intuitive, and fast way to roll one or two dice during board games or casual play.
 
 The app focuses on:
@@ -93,7 +93,7 @@ Extensions/
 Clone the repository and open the project in Xcode:
 
 ```bash
-git clone https://github.com/dsokolovdev/DicePro.git
+git clone https://github.com/dsokolovdev/CubixyApp.git
 cd DicePro
 open DicePro.xcodeproj
 ```
@@ -101,4 +101,4 @@ open DicePro.xcodeproj
 ## ❤️ Author
 
 Created by Dmitry Sokolov  
-© 2025
+© 2026

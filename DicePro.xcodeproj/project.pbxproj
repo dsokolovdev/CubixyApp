@@ -148,6 +148,7 @@
 				DEVELOPMENT_TEAM = B9V2S6X232;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DicePro/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Cubixy;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -180,6 +181,7 @@
 				DEVELOPMENT_TEAM = B9V2S6X232;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DicePro/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Cubixy;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
