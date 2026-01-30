@@ -4,6 +4,12 @@
 
 # Cubixy
 
+<p align="center">
+  <a href="https://apps.apple.com/app/cubixy/id6758349947">
+    <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1705968000" alt="Download on App Store" style="width: 200px;">
+  </a>
+</p>
+
 Cubixy is a lightweight iOS dice rolling app built with UIKit and a fully programmatic UI. 
 The project demonstrates clean structure, adaptive layout, and smooth interactions.
 
